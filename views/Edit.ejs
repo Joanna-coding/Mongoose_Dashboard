@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Quoting Dojo</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    
+    <body>
+        <h1>Welcome to Edit Page</h1>
+        <form action="/edit/<%= data._id %>" method="POST">
+                
+
+                Your FirstName:
+                <input type="text" name="firstName" value="<%= data.firstName %>">
+                <br><br>
+                your LastName:<br>
+                <input type="text" name="lastName" value="<%= data.lastName %>"><br><br>
+
+                your Age:<br>
+                <input type="text" name="age"  value="<%= data.age %>"><br><br>
+                
+                <input type="submit" value="Submit">
+          
+        </form> 
+    </body>
+</html>

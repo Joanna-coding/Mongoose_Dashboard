@@ -1,0 +1,79 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Quoting Dojo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+
+<style>
+    .wrapper {
+        width: 500px;
+
+    }
+
+    table,th,td{
+        border: 1px solid black;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    form{
+        display: inline-flex;
+    }
+    .color button{
+        color: blue;
+        margin-top:5px;
+    }
+</style>
+</head>
+
+<body>
+
+    <h2>Mongoose Dashboard</h2>
+
+
+        <div class="wrapper">
+            <table style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Selfie</th>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                        <th>Age</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(var y of users) { %>
+                        <tr>
+                            <td>"<%= y.imageURL %>"</td>
+                            <td>"<%= y.firstName %>"</td>
+                            <td>"<%= y.lastName %>"</td>
+                            <td>"<%= y.age %>"</td>
+                            <td>
+                                <!-- <form action="/delete/<%=y._id%>"  method="POST">
+                                        <button type="submit"> delete</button>
+                                </form>
+                                <form action="/edit" method="post">
+                                        <button type="submit">edit</button>
+                                </form> -->
+                                <a href="/delete/<%=y._id%>">delete</a>
+                                <a href="/edit/<%=y._id%>">Edit</a>
+                                
+                            </td>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
+            <!-- <form action="/New"  method="get">
+                <button type="submit"> New</button>
+            </form> -->
+            <a href="/user/new">New</a>
+        </div>
+
+
+    </div>
+</body>
+
+</html>
